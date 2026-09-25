@@ -7,3 +7,5 @@
 - [3주차](./week03)
 ## DevOps PR 과제
 Pull Request 생성, Merge
+
+상태: [기본]
