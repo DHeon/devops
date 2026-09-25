@@ -8,4 +8,4 @@
 ## DevOps PR 과제
 Pull Request 생성, Merge
 
-상태: fix에서 수정
+상태: Conflict 해결
