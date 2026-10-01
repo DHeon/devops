@@ -118,3 +118,12 @@ ETag: "6abdd35f-380"
 Accept-Ranges: bytes
 ```
 
+## index.html 스크린샷
+
+![nginx1](./images/nginx1.png)
+![nginx2](./images/nginx2.png)
+![nginx3](./images/nginx3.png)
+
+## docker ps 스크린샷
+
+![dockerps](./images/dockerpsresult.png)
