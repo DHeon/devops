@@ -1,6 +1,8 @@
 # 5주차 - Docker
 ## docker --version 결과
+```
 Docker version 29.8.1, build 4a63305
+```
 ## docker run hello-world 실행 결과
 ```
 Hello from Docker!
@@ -49,3 +51,70 @@ Accept-Ranges: bytes
 CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                     NAMES
 49812ff001f3   nginx     "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp   web
 ```
+## 혼자서 해보기
+
+### 3개의 다른 포트를 가진 nginx 실행
+```
+docker run -d -p 8091:80 --name nginx1 nginx
+
+docker run -d -p 8092:80 --name nginx2 nginx
+
+docker run -d -p 8093:80 --name nginx3 nginx
+```
+를 통해 8081, 8082, 8083 포트로 nginx 실행
+
+### index.html 수정
+
+```
+docker exec -it nginx1 bash
+sed -i 's/nginx!/nginx1/g' /usr/share/nginx/html/index.html
+
+docker exec -it nginx2 bash
+sed -i 's/nginx!/nginx2/g' /usr/share/nginx/html/index.html
+
+docker exec -it nginx3 bash
+sed -i 's/nginx!/nginx3/g' /usr/share/nginx/html/index.html
+```
+를 통해 nginx1 nginx2 nginx3 컨테이너들의 index.html을 수정하였음.
+
+## 8091, 8092, 8093 curl 결과
+```
+8091 결과
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.6
+Date: Thu, 01 Oct 2026 03:33:29 GMT
+Content-Type: text/html
+Content-Length: 896
+Last-Modified: Thu, 01 Oct 2026 03:25:27 GMT
+Connection: keep-alive
+ETag: "6abdd2a7-380"
+Accept-Ranges: bytes
+```
+```
+8092 결과
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.6
+Date: Thu, 01 Oct 2026 03:33:38 GMT
+Content-Type: text/html
+Content-Length: 896
+Last-Modified: Thu, 01 Oct 2026 03:28:15 GMT
+Connection: keep-alive
+ETag: "6abdd34f-380"
+Accept-Ranges: bytes
+```
+```
+8093 결과
+
+HTTP/1.1 200 OK
+Server: nginx/1.31.6
+Date: Thu, 01 Oct 2026 03:33:53 GMT
+Content-Type: text/html
+Content-Length: 896
+Last-Modified: Thu, 01 Oct 2026 03:28:31 GMT
+Connection: keep-alive
+ETag: "6abdd35f-380"
+Accept-Ranges: bytes
+```
+
