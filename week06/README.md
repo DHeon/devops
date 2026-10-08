@@ -174,6 +174,8 @@ FROM을 친구 이미지로 하면 그 이미지를 바탕으로 Dockerfile이 �
 이미지 주소 : ghcr.io/dheon/guestbook:v2
 ```
 
+![screenshot](./친구방명록.png)
+
 ```
 Dockerfile 설명
 
