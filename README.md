@@ -7,6 +7,7 @@
 - [3주차](./week03)
 - [4주차](./week04)
 - [5주차](./week05)
+- [6주차](./week06)
 
 ## DevOps PR 과제
 Pull Request 생성, Merge
