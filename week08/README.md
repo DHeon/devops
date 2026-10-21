@@ -19,6 +19,7 @@
 
 [ppt 파일](https://github.com/DHeon/devops/blob/main/week08/Issue_Merge.pptx)
 
+ppt 미리보기 이미지
 ![미리보기](./Issue_Merge.png)
 
 ## web=3을 항상 유지하는 방법
