@@ -4,7 +4,7 @@
 
 [Git 주소](https://github.com/DHeon/devops)
 
-[git 캡쳐](./1.png)
+![git 캡쳐](./1.png)
 
 ## 주차별 README.md 
 
@@ -19,7 +19,7 @@
 
 [ppt 파일](https://github.com/DHeon/devops/blob/main/week08/Issue_Merge.pptx)
 
-[미리보기](./Issue_Merge.png)
+![미리보기](./Issue_Merge.png)
 
 ## web=3을 항상 유지하는 방법
 
