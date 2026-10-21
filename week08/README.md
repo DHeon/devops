@@ -17,4 +17,6 @@
 
 ## Issue에서부터 Merge까지의 과정
 
+[ppt 파일](https://github.com/DHeon/devops/blob/main/week08/Issue_Merge.pptx)
+
 
