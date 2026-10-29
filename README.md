@@ -9,6 +9,9 @@
 - [5주차](./week05)
 - [6주차](./week06)
 - [7주차](./week07)
+- [8주차 중간 평가](./week08)
+- [9주차](./week09)
+
 
 ## DevOps PR 과제
 Pull Request 생성, Merge
