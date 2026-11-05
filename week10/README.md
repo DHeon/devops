@@ -158,4 +158,11 @@ deployment.yaml을 수정하는 방식은 기록을 남긴다.
 다시 apply를 하면 deployment.yaml을 기준으로 맞춘다.
 ```
 
+## 혼자 해보기
+
+replicas를 5로 늘리고 kubectl get pods 결과
+![image1](./1.png)
+
+Pod 하나 삭제 후 확인
+![image2](./2.png)
 
