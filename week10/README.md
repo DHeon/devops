@@ -158,13 +158,81 @@ deployment.yaml을 수정하는 방식은 기록을 남긴다.
 다시 apply를 하면 deployment.yaml을 기준으로 맞춘다.
 ```
 
+## 롤링
+
+```
+$ kubectl set image deployment/guestbook web=ghcr.io/내아이디/guestbook:v2
+```
+
+롤링 상태 확인
+```
+$ kubectl rollout status deployment/guestbook
+```
+
+```
+$ kubectl get rs
+
+새로운 replica set이 생성된 것을 확인할 수 있음.
+```
+
+##롤백
+
+```
+$ kubectl rollout history deployment/guestbook  # REVISION 확인가능
+
+$ kubectl rollout undo deployment/guestbook # Rollback
+
+$ kubectl rollout undo deployment/guestbook --to-revision=1 # 지정한 번호로 되돌리기
+```
+
+```
+REVISION
+
+되돌리면 이전 번호로 돌아가는 것이 아닌 이전 버전으로 돌아간 새로운 번호가 부여됨
+```
+
+
+
 ## 혼자 해보기
 
 replicas를 5로 늘리고 kubectl get pods 결과
 
 ![image1](./1.png)
 
+```
+guestbook-56ffb7749d-4p4v6
+guestbook-56ffb7749d-4p7r4
+guestbook-56ffb7749d-dmlwz
+guestbook-56ffb7749d-sd56n
+guestbook-56ffb7749d-xlx9k
+```
+
 Pod 하나 삭제 후 확인
 
 ![image2](./2.png)
+
+
+롤링 업데이트
+```
+$ kubectl set image deployment/guestbook web=ghcr.io/dheon/guestbook:v2
+
+v2로 업데이트
+```
+
+rollout history 결과
+```
+$ kubectl rollout history deployment/guestbook
+
+heon@k:~/devops/guestbook$ kubectl rollout history deployment/guestbook
+deployment.apps/guestbook
+REVISION  CHANGE-CAUSE
+5         <none>
+6         <none>
+```
+
+롤백 수행
+```
+$ kubectl rollout undo deployment/guestbook
+```
+
 
