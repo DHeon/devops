@@ -129,6 +129,35 @@ kubectl apply -f k8s/redis.yaml
 ```
 
 
+## 설정만 변경
+
+```
+$ kubectl edit configmap guestbook-config
+
+$ kubectl rollout restart deployment guetstbook
+```
+
+```
+ConfigMap을 수정해도 이미 떠 있는 Pod는 모르기에
+restart를 통해 새 값을 읽게 해야한다,
+```
+
+## 헬스체크
+
+```
+앱은 살아있지만 응답을 못하는 상태
+
+프로세스는 살아있기 때문에 쿠버네티스는 정상으로 판단하지만 
+실제로는 정상적인 서비스가 아님
+
+->
+쿠버네티스가 주기적으로 앱의 응답 통로를 통해 물어보게 함.
+
+/healthz, /readyz
+
+```
+
+
 ## 혼자 해보기
 
 ### base64
