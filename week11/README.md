@@ -113,4 +113,19 @@ envFrom:
      name: guestbook-config
   -secretRef:
      name: guestbook-secret
+
+resources:
+  requests:
+    memory: "64Mi"
+    cpu: "100m" 
+  limits:
+    memory: "128Mi"
+    cpu: "500m"
 ```
+
+```
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/redis.yaml
+```
+
+
