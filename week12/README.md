@@ -59,4 +59,10 @@ build.yml
 .github/workflows/build.yml에 생성 후 main에 대한 push나 pull request가 열리면 동작함
 ```
 
+## main 브랜치 보호하기
+
+```
+github의 rulesets
+brancehs에서 보호 설정 가능
+```
 
