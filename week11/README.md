@@ -157,6 +157,17 @@ restart를 통해 새 값을 읽게 해야한다,
 
 ```
 
+## 트러블슈팅 - 3단 루틴
+
+```
+$ kubectl get pods #상태확인(STATUS, READY, RESTARTS)
+
+$ kubectl describe pod<pod이름>    # 맨아래Events확인
+
+$ kubectl logs <pod이름>           #앱자체의에러메시지
+$ kubectl logs <pod이름> --previous #재시작전로그(CrashLoop일때사용)
+```
+
 
 ## 혼자 해보기
 
@@ -170,3 +181,10 @@ base64 -d 명령어 만으로 바로 디코딩하여 쉽게 원래의 문자열�
 
 ### ConfigMap으로 제목과 Theme 변경
 ![2](./2.png)
+
+### Liveness와 Readiness 
+
+![3](./4.png)
+
+![4](./5.png)
+
